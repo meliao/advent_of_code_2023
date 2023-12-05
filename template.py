@@ -18,7 +18,7 @@ def problem_2(input_file: str) -> None:
 
 
 def main(a: argparse.Namespace) -> None:
-    if a.debug:
+    if a.d:
         fp_1 = f"inputs/{DAY}_1_debug.txt"
         fp_2 = f"inputs/{DAY}_2_debug.txt"
 
@@ -26,7 +26,7 @@ def main(a: argparse.Namespace) -> None:
         fp_1 = f"inputs/{DAY}_1.txt"
         fp_2 = f"inputs/{DAY}_1.txt"
 
-    if a.second:
+    if a.s:
         problem_2(fp_2)
     else:
         problem_1(fp_1)
@@ -35,7 +35,7 @@ def main(a: argparse.Namespace) -> None:
 if __name__ == "__main__":
     a = setup_args()
 
-    if a.debug:
+    if a.d:
         logging.getLogger().setLevel(logging.DEBUG)
     else:
         logging.getLogger().setLevel(logging.INFO)
